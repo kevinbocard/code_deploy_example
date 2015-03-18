@@ -8,15 +8,15 @@ permissions:
      pattern: "**"
      owner: apache
      group: apache
-     mode: 755
+     mode: 777
      type:
        - file
 hooks:
    BeforeInstall:
     - location: scripts/installapache.sh
-      runas: root
+      runas: ubuntu
     - location: scripts/startapache.sh
-      runas: root
+      runas: ubuntu
    AfterInstall:
     - location: scripts/restartapache.sh
-      runas: root
+      runas: ubuntu
